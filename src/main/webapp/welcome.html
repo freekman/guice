@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Welcome Page</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <a class="navbar-brand">${uName}</a>
+        <a class="navbar-brand">&nbsp;:&nbsp;$&nbsp;${balance}</a>
+        <div class="nav navbar-right">
+            <a href="/logout" class="navbar-brand">Log Out</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="jumbotron">
+        <div style="width: 30%;margin-left: auto;margin-right: auto">
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Withdraw
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <form class="form-signin" method="post" action="/manager">
+                                <input type="hidden" name="operation" value="withdraw">
+                                <input type="text" class="form-control" name="amount"/>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Withdraw</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Deposit
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <form class="form-signin" method="post" action="/manager">
+                                <input type="hidden" name="operation" value="deposit">
+                                <input type="text" class="form-control" name="amount">
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Deposit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-bottom"></div>
+<script src="../jquery/jquery-1.11.2.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
